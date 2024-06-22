@@ -30,7 +30,7 @@ const viewer = new IfcViewerAPI({ container, backgroundColor: viewerColor });
 viewer.axes.setAxes();
 viewer.shadowDropper.darkness = 1.5;
 
-viewer.IFC.setWasmPath("../Heritage-LBDviz/dist/"); //Github Pages hosting
+viewer.IFC.setWasmPath("../Lighting-LBDviz/dist/"); //Github Pages hosting
 // viewer.IFC.setWasmPath("dist/"); //Local hosting
 
 viewer.IFC.loader.ifcManager.applyWebIfcConfig({
@@ -86,7 +86,7 @@ async function loadDefaultIfc(url) {
     await viewer.IFC.selector.pickIfcItemsByID(model.modelID, pickIfcItemByGUID(hashGUID), true, false);
   }  
 }
-loadDefaultIfc("https://raw.githubusercontent.com/MarijnJanssenSteenberg/Heritage-LBDviz/main/resources/IFC/MonumentOpDeDam_zonderBestrating.ifc");
+loadDefaultIfc("../Lighting-LBDviz/resources/IFC/MonumentOpDeDam_zonderBestrating.ifc");
 
 const scene = viewer.context.getScene();
 
