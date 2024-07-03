@@ -26,7 +26,7 @@ const viewer = new IfcViewerAPI({ container, backgroundColor: viewerColor });
 viewer.axes.setAxes();
 viewer.shadowDropper.darkness = 1.5;
 
-viewer.IFC.setWasmPath("../");
+viewer.IFC.setWasmPath("../Lighting-LBDviz/dist/");
 
 viewer.IFC.loader.ifcManager.applyWebIfcConfig({
     USE_FAST_BOOLS: true,
