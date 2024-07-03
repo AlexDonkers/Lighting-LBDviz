@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../../../logo.ico">
+    <link rel="icon" href="./logo.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/styles.css">
+    <link rel="stylesheet" href="./src/styles.css">
     <title>Lighting LBDviz</title>
 </head>
 <body>   
-    <script src="bundle.js" type="module"></script>
+    <script src="dist/bundle.js" type="module"></script>
     <div> 
         <div id="topbar">
-            <img src="../logo.png"/ alt="LBDviz logo" height="50">
+            <img src="./logo.png"/ alt="LBDviz logo" height="50">
             <a class="header-text">Lighting LBD</a><a class="header-text-handwritten">viz</a>
             <a class="header-text" id="project-name" style="padding-left:480px">PROJECT NAME</a><a class="header-text"
             id="selected-guid" style="padding-left:20px"></a>
@@ -26,8 +26,8 @@
                 </div>
                   
                 <div id="tools-tab" class="optionstabcontent">
-                    <button class="options-button" id="load-ifc-button"><img id="folder-image" src="../resources/Folder.png" height="20px" style="float:center">Load IFC</i></button>
-                    <button class="options-button" id="load-default-ifc-button"><img id="folder-image" src="../resources/Flat.png" height="20px">Load Vertigo IFC</i></button>
+                    <button class="options-button" id="load-ifc-button"><img id="folder-image" src="./resources/Folder.png" height="20px" style="float:center">Load IFC</i></button>
+                    <button class="options-button" id="load-default-ifc-button"><img id="folder-image" src="./resources/Flat.png" height="20px">Load Vertigo IFC</i></button>
                 </div>                    
             </div>
 
@@ -40,15 +40,15 @@
                   </div>
                   
                   <div id="find-tab" class="tabcontent">
-                    <button class="find-button" id="find-all-walls" onclick="queryComunicaGlobalIdProps()"><img id="folder-image" src="../resources/Size.png" height="20px"></i>Properties of selected element</button>
+                    <button class="find-button" id="find-all-walls" onclick="queryComunicaGlobalIdProps()"><img id="folder-image" src="./resources/Size.png" height="20px"></i>Properties of selected element</button>
 
-                    <button class="find-button" id="find-all-walls" onclick="queryComunicaRoomProperties()"><img id="folder-image" src="../resources/Feedback.png" height="20px"></i>Feedback and relevant properties (floor 9)</button>
-                    <button class="find-button" id="find-all-walls" onclick="queryComunicaOccupantInformation()"><img id="folder-image" src="../resources/Person.png" height="20px"></i>Occupant information (room 9.09)</button>
-                    <button class="find-button" id="find-all-walls" onclick="queryComunicaDeskProperties()"><img id="folder-image" src="../resources/Desk.png" height="20px"></i>Desk properties (desk 9.22)</button>
-                    <button class="find-button" id="find-all-walls" onclick="queryComunicaObjectiveAndSubjectiveMeasurements()"><img id="folder-image" src="../resources/Chart.png" height="20px"></i>Objective and subjective measurements (room 9.09)</button>
-                    <button class="find-button" id="find-all-walls" onclick="queryComunicaObjectiveAndSubjectiveMeasurementsGUID()"><img id="folder-image" src="../resources/Chart.png" height="20px"></i>Objective and subjective measurements</button>
-                    <button class="find-button" id="find-all-walls" onclick="queryComunicaBeeEye()"><img id="folder-image" src="../resources/Camera.png" height="20px"></i>Bee-Eye (room 9.09)</button>
-                    <button class="find-button" id="find-all-walls" onclick="queryComunicaPlot()"><img id="folder-image" src="../resources/Data.png" height="20px"></i>Plot (desk 9.22)</button>
+                    <button class="find-button" id="find-all-walls" onclick="queryComunicaRoomProperties()"><img id="folder-image" src="./resources/Feedback.png" height="20px"></i>Feedback and relevant properties (floor 9)</button>
+                    <button class="find-button" id="find-all-walls" onclick="queryComunicaOccupantInformation()"><img id="folder-image" src="./resources/Person.png" height="20px"></i>Occupant information (room 9.09)</button>
+                    <button class="find-button" id="find-all-walls" onclick="queryComunicaDeskProperties()"><img id="folder-image" src="./resources/Desk.png" height="20px"></i>Desk properties (desk 9.22)</button>
+                    <button class="find-button" id="find-all-walls" onclick="queryComunicaObjectiveAndSubjectiveMeasurements()"><img id="folder-image" src="./resources/Chart.png" height="20px"></i>Objective and subjective measurements (room 9.09)</button>
+                    <button class="find-button" id="find-all-walls" onclick="queryComunicaObjectiveAndSubjectiveMeasurementsGUID()"><img id="folder-image" src="./resources/Chart.png" height="20px"></i>Objective and subjective measurements</button>
+                    <button class="find-button" id="find-all-walls" onclick="queryComunicaBeeEye()"><img id="folder-image" src="./resources/Camera.png" height="20px"></i>Bee-Eye (room 9.09)</button>
+                    <button class="find-button" id="find-all-walls" onclick="queryComunicaPlot()"><img id="folder-image" src="./resources/Data.png" height="20px"></i>Plot (desk 9.22)</button>
 
                 </div>
                   
@@ -86,9 +86,9 @@ LIMIT 100
 
         <div id="logobar">
             <a href="https://www.tue.nl/en/research/researchers/alex-donkers/" target="_blank"style="font-family:'MONSTERA'; color: white; font-size:25px; padding-left: 35px; text-decoration:none">by Alex Donkers</a><br>            
-            <a href="https://www.tue.nl/"target="_blank"><img  src="../resources/TUE.png"/ alt="TUE logo" height="40" style="vertical-align: middle;"></a>
-            <a href="https://www.kpn.nl/"target="_blank"><img src="../resources/kpn.png"/ alt="KPN logo" height="50" style="vertical-align: middle;"></a>
-            <a href="https://github.com/AlexDonkers/Frontends-and-LBD"target="_blank"><img src="../resources/GitHub.png"/ alt="GitHub logo" height="40" style="vertical-align: middle; padding-left: 10px"></a>
+            <a href="https://www.tue.nl/"target="_blank"><img  src="./resources/TUE.png"/ alt="TUE logo" height="40" style="vertical-align: middle;"></a>
+            <a href="https://www.kpn.nl/"target="_blank"><img src="./resources/kpn.png"/ alt="KPN logo" height="50" style="vertical-align: middle;"></a>
+            <a href="https://github.com/AlexDonkers/Frontends-and-LBD"target="_blank"><img src="./resources/GitHub.png"/ alt="GitHub logo" height="40" style="vertical-align: middle; padding-left: 10px"></a>
         </div>
 
         <div id="loading-overlay" class="loading-overlay hidden">
@@ -96,7 +96,5 @@ LIMIT 100
         </div>
 
     </div>
-
-    <script src="/src/chart.js"></script>
 </body>
 </html>
