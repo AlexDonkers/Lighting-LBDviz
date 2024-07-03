@@ -1,0 +1,150 @@
+## This is an extension of the OpenFlat, an initiative by Alex Donkers, with circular information to instantiate the DOR ontology by Arghavan et al. 
+## The OpenFlat can be used by researchers. More data is available on http://github.com/AlexDonkers/OpenFlat
+
+################################################################################################################################################################################################################################
+################################################################################################################################################################################################################################
+# PREFIXES
+################################################################################################################################################################################################################################
+################################################################################################################################################################################################################################
+
+@prefix OF:   	<http://github.com/AlexDonkers/OpenFlat#> .
+
+@prefix bop:   	<https://w3id.org/bop#> .							# Building Performance Ontology
+@prefix bpt:   	<https://w3id.org/bpt#> .							# Building Property Taxonomy
+@prefix bot:   	<https://w3id.org/bot#> .							# Building Topology Ontology
+@prefix beo:   	<http://pi.pauwel.be/voc/buildingelement#> .		# Building Element Ontology
+@prefix mep:   	<http://pi.pauwel.be/voc/distributionelement#> .	# Distribution Elenemt Ontology
+@prefix geo:   	<http://www.opengis.net/ont/geosparql#> .			# GeoSPARQL
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .		# QUDT Quantity Kind ontology
+
+@prefix owl:   	<http://www.w3.org/2002/07/owl#> .					# Web Ontology Language
+@prefix rdf:   	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .		# Resource Description Framework
+@prefix rdfs:  	<http://www.w3.org/2000/01/rdf-schema#> .			# RDF Schema
+
+@prefix dor:	<http://www.semanticweb.org/arnak/ontologies/2022/7/DOR#> .	# Decomissioning and Reuse Ontology
+@prefix bpo:	<http://www.w3id.org/bpo#> .								# Building Product Ontology
+@prefix dicm:	<https://w3id.org/digitalconstruction/0.5/Materials#> .		# DICM
+
+################################################################################################################################################################################################################################
+################################################################################################################################################################################################################################
+# Circular information
+################################################################################################################################################################################################################################
+################################################################################################################################################################################################################################
+
+### Building
+
+OF:OpenFlat
+		dor:hasDecomissioningDate				"2025-01-01T00:00:01" .
+
+### Floor
+
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f
+		a										bpo:Assembly ;
+		bpo:isComposedOfEntity 					OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Structural , OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Finishing, OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_UnderfloorHeating.
+		
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Structural	
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Structural_Material ;
+		dor:hasCircularPotential				"94%" ;
+		dor:hasCurrentUseCount					"2" .
+
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Structural_Material
+		a										dicm:Material, dicm:Concrete ;
+		dor:hasSourceType						dor:PrimaryRawMaterial .
+		
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Finishing	
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Finishing_Material ;
+		dor:hasCircularPotential				"0%" ;
+		dor:hasCurrentUseCount					"1" .		
+
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Finishing_Material
+		a										dicm:Material, dicm:Polyurethane ;
+		dor:hasSourceType						dor:SecondaryRawMaterial .
+
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_UnderfloorHeating	
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_UnderfloorHeating_Material ;
+		dor:hasCircularPotential				"40%" ;
+		dor:hasCurrentUseCount					"1" .
+
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_UnderfloorHeating_Material
+		a										dicm:Material , dicm:Polyethylene ;
+		dor:hasSourceType						dor:SecondaryRawMaterial .
+
+
+### InsulationMaterial
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a12828
+		a										bpo:Assembly ;
+		bpo:isComposedOfEntity 					OF:wall_f27649ff-6b90-4736-ab52-98da77a12828_Structural, OF:wall_f27649ff-6b90-4736-ab52-98da77a12828_Insulation .
+		
+OF:wall_f27649ff-6b90-4736-ab52-98da77a12828_Structural
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:wall_f27649ff-6b90-4736-ab52-98da77a12828_Structural_Material ;
+		dor:hasCircularPotential				"70%" ;
+		dor:hasCurrentUseCount					"1" .
+
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Structural_Material
+		a										dicm:Material, dicm:SandLimeBrick ;
+		dor:hasSourceType						dor:PrimaryRawMaterial .
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a12828_Insulation
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:wall_f27649ff-6b90-4736-ab52-98da77a12828_Insulation_Material ;
+		dor:hasCircularPotential				"95%" ;
+		dor:hasCurrentUseCount					"2" .
+
+OF:slab_f27649ff-6b90-4736-ab52-98da77a13d7f_Insulation_Material
+		a										dicm:Material, dicm:Rockwool ;
+		dor:hasSourceType						dor:SecondaryRawMaterial .
+
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d
+		a										bpo:Assembly ;
+		bpo:isComposedOfEntity 					OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d_Structural, OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d_Insulation .
+		
+OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d_Structural
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d_Structural_Material ;
+		dor:hasCircularPotential				"70%" ;
+		dor:hasCurrentUseCount					"1" .
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d_Structural_Material
+		a										dicm:Material, dicm:SandLimeBrick ;
+		dor:hasSourceType						dor:PrimaryRawMaterial .
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d_Insulation
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d_Insulation_Material ;
+		dor:hasCircularPotential				"95%" ;
+		dor:hasCurrentUseCount					"2" .
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a1272d_Insulation_Material
+		a										dicm:Material, dicm:Rockwool ;
+		dor:hasSourceType						dor:SecondaryRawMaterial .
+
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa
+		a										bpo:Assembly ;
+		bpo:isComposedOfEntity 					OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa_Structural, OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa_Insulation .
+		
+OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa_Structural
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa_Structural_Material ;
+		dor:hasCircularPotential				"70%" ;
+		dor:hasCurrentUseCount					"1" .
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa_Structural_Material
+		a										dicm:Material, dicm:SandLimeBrick ;
+		dor:hasSourceType						dor:PrimaryRawMaterial .
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa_Insulation
+		a										bpo:Entity ;
+		dicm:hasMaterial						OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa_Insulation_Material ;
+		dor:hasCircularPotential				"95%" ;
+		dor:hasCurrentUseCount					"2" .
+
+OF:wall_f27649ff-6b90-4736-ab52-98da77a12bfa_Insulation_Material
+		a										dicm:Material, dicm:Rockwool ;
+		dor:hasSourceType						dor:SecondaryRawMaterial .

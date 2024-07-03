@@ -1,0 +1,60 @@
+
+################################################################################################################################################################################################################################
+################################################################################################################################################################################################################################
+# PREFIXES
+################################################################################################################################################################################################################################
+################################################################################################################################################################################################################################
+
+@prefix OF:   	<http://github.com/AlexDonkers/OpenFlat#> .
+
+@prefix bop:   	<https://w3id.org/bop#> .							# Building Performance Ontology
+@prefix bpt:   	<https://w3id.org/bpt#> .							# Building Property Taxonomy
+@prefix bot:   	<https://w3id.org/bot#> .							# Building Topology Ontology
+@prefix beo:   	<http://pi.pauwel.be/voc/buildingelement#> .		# Building Element Ontology
+@prefix mep:   	<http://pi.pauwel.be/voc/distributionelement#> .	# Distribution Elenemt Ontology
+@prefix geo:   	<http://www.opengis.net/ont/geosparql#> .			# GeoSPARQL
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .		# QUDT Quantity Kind ontology
+
+@prefix owl:   	<http://www.w3.org/2002/07/owl#> .					# Web Ontology Language
+@prefix rdf:   	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .		# Resource Description Framework
+@prefix rdfs:  	<http://www.w3.org/2000/01/rdf-schema#> .			# RDF Schema
+
+
+###
+
+OF:OpenFlat
+	bot:hasSpace					OF:LivingRoom .
+
+OF:LivingRoom 
+	bop:hasSimpleFloorArea 			"35" ;
+	bop:hasSimpleWindowToWallRatio 	"28%" ;
+	bop:hasOperationalAssessment 	OF:LivingRoomAssessment .
+
+OF:LivingRoomAssessment
+	bop:hasSimpleResult				"C" .
+
+###
+
+OF:OpenFamilyHome
+bot:hasSpace	OF:Living .
+
+OF:Living
+	bop:hasSimpleFloorArea 			"54" ;
+	bop:hasSimpleWindowToWallRatio 	"22%" ;
+	bop:hasOperationalAssessment 	OF:LivingAssessment .
+
+OF:LivingAssessment
+	bop:hasSimpleResult				"A" .
+
+###
+
+OF:Duplex
+bot:hasSpace	OF:DuplexLivingRoom .
+
+OF:CommonRoom 
+	bop:hasSimpleFloorArea 			"30.14" ;
+	bop:hasSimpleWindowToWallRatio 	"24%" ;
+	bop:hasOperationalAssessment 	OF:DuplexLivingRoomAssessment .
+
+OF:DuplexLivingRoomAssessment
+	bop:hasSimpleResult				"B" .
